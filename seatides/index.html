@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../seatides/css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../seatides/css/app.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">下方悬浮标题</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#homepager">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+		 <div id="homepager" class="mui-control-content mui-active">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop" style="height: 200px;">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../seatides/images/ad_03.jpg">
+							<p class="mui-slider-title">微信公众号</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/ad_01.png">
+							<p class="mui-slider-title">>微信公众号</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/ad_02.jpg">
+							<p class="mui-slider-title">示例服装1</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/ad_03.jpg">
+							<p class="mui-slider-title">示例服装2</p>
+						</a>
+					</div>
+					<!--<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/1.jpg">
+							<p class="mui-slider-title">Color of SIP CBD</p>
+						</a>
+					</div>-->
+					<!--<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/1.jpg">
+							<p class="mui-slider-title">静静看这世界</p>
+						</a>
+					</div>-->
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../seatides/images/ad_01.png">
+							<p class="mui-slider-title">幸福就是可以一起睡觉</p>
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator mui-text-right">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div>
+		<table align="center" width="100%" height="100px" border=0 style="margin:0 auto;"
+			bordercolor="#00ff99">
+			<tbody style="height: 100px;">
+				<tr>
+					<td width="33.3%" onclick="mealClick()" style="text-align:center"><img class="icon" style="width: 80%;"
+						src="../seatides/images/ic_order.png">
+						<h4 style="color:#9D9D9D; text-align:center">客服</h5></td>
+					<td width="33.3%" onclick="dialyorderClick()" style="text-align:center"><img style="width: 80%;"
+						class="icon" src="../seatides/images/ic_part.png">
+						<h4 style="color:#9D9D9D; text-align:center">成果</h5></td>
+					<td width="33.3%" onclick="staffInfoClick()" style="text-align:center"><img  style="width: 80%;" class="icon" 
+						src="../seatides/images/ic_user.png">
+						<h4 style="color:#9D9D9D; text-align:center">文章</h5></td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">畅销冠军</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		
+		<div class="mui-content">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		                    <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">畅销冠军</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		            <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">畅销冠军</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		                    <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">畅销冠军</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		        </ul> 
+		</div>
+		
+	</div>
+		</div>
+		<div id="tabbar-with-chat" class="mui-control-content">
+				<div class="title">这是div模式选项卡中的第2个子页面，该页面展示一个消息列表</div>
+				
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 1</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 2</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 3</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 4</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 5</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 6</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 7</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 8</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 9</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 10</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 11</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 12</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 13</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 14</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 15</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 16</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 17</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 18</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 19</a></li>
+					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 20</a></li>
+				</ul>
+				
+			</div>
+			<div id="tabbar-with-contact" class="mui-control-content">
+				<div class="title">这是div模式选项卡中的第3个子页面，该页面展示一个通讯录示例.</div>
+				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="../images/60x60.gif" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">叶文洁</h4>
+									<span class="oa-contact-position mui-h6">董事长</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									yewenjie@sina.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="../images/60x60.gif" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">艾AA</h4>
+									<span class="oa-contact-position mui-h6">总经理</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									aaa@163.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="../images/60x60.gif" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">罗辑</h4>
+									<span class="oa-contact-position mui-h6">员工</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									luoji@126.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="../images/60x60.gif" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">云天明</h4>
+									<span class="oa-contact-position mui-h6">员工</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									ytm@163.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="../images/60x60.gif" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">史强</h4>
+									<span class="oa-contact-position mui-h6">员工</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									shiqiang@gmail.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			</div>
+			<div id="tabbar-with-map" class="mui-control-content">
+				<div class="title">这是div模式选项卡中的第4个子页面，该页面展示一个常见的设置示例.</div>
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						新消息通知
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						隐私
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						通用
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						关于mui
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a style="text-align: center;color: #FF3B30;">
+						退出登录
+					</a>
+				</li>
+			</ul>
+			</div>
+		
+	</body>
+	<script src="../seatides/js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		var slider = mui("#slider");
+		slider.slider({
+					interval: 5000
+				});
+		/*document.getElementById("switch").addEventListener('toggle', function(e) {
+			if (e.detail.isActive) {
+				slider.slider({
+					interval: 5000
+				});
+			} else {
+				slider.slider({
+					interval: 0
+				});
+			}
+		});*/
+	</script>
+</html>
