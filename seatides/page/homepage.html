@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<div id="juhome" class="justhome">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css"/>
+	<div id="homepager" class="mui-control-content mui-active">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop" style="height: 200px;">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/ad_03.jpg">
+							<p class="mui-slider-title">微信公众号</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/ad_01.png">
+							<p class="mui-slider-title">微信公众号</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/ad_02.jpg">
+							<p class="mui-slider-title">示例服装1</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/ad_03.jpg">
+							<p class="mui-slider-title">示例服装2</p>
+						</a>
+					</div>
+					<!--<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/1.jpg">
+							<p class="mui-slider-title">Color of SIP CBD</p>
+						</a>
+					</div>-->
+					<!--<div class="mui-slider-item">
+						<a href="#">
+							<img src="../seatides/images/1.jpg">
+							<p class="mui-slider-title">静静看这世界</p>
+						</a>
+					</div>-->
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/ad_01.png">
+							<p class="mui-slider-title">示例服装2</p>
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator mui-text-right">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div>
+		<table align="center" width="100%" height="100px" border=0 style="margin:0 auto;"
+			bordercolor="#00ff99">
+			<tbody style="height: 100px;">
+				<tr>
+					<td width="33.3%" onclick="mealClick()" style="text-align:center"><img class="icon" style="width: 80%;"
+						src="../images/ic_order.png">
+						<h4 style="color:#9D9D9D; text-align:center">客服</h5></td>
+					<td width="33.3%" onclick="dialyorderClick()" style="text-align:center"><img style="width: 80%;"
+						class="icon" src="../images/ic_part.png">
+						<h4 style="color:#9D9D9D; text-align:center">设计师</h5></td>
+					<td width="33.3%" onclick="staffInfoClick()" style="text-align:center"><img  style="width: 80%;" class="icon" 
+						src="../images/ic_user.png">
+						<h4 style="color:#9D9D9D; text-align:center">公告</h5></td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">畅销冠军</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		
+		<div class="mui-content">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="../images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="../images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="../images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		                    <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">豆蔻年华</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="../images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="../images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="../images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		            <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">社团风采</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="../images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="../images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="../images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		                    <div style="text-align: center;background-color:white ;">
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: left;"></hr>
+		<h5 style="display: inline;width: 20%;">学院风范</h5>
+		<hr style=" height:0.1px; width: 40%; background-color: #000000; float: right;"></hr>
+		</div>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "
+		            	><a href="#">
+		                    <!--<span class="mui-icon mui-icon-home"></span>-->
+		                    <img src="../images/test_pop_02.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款1</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
+		                    <img src="../images/test_pop_03.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款2</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4  "><a href="#">
+		                    <!--<span class="mui-icon mui-icon-chatbubble"></span>-->
+		                    <img src="../images/test_pop_04.jpg" class="mui-col-xs-12"/>
+		                    <div class="mui-media-body">爆款3</div></a></li>
+		        </ul> 
+		</div>
+		
+	</div>
+		</div>
+		</div>
+</html>
