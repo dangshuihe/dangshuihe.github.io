@@ -89,3 +89,35 @@
             	color: red;
             	font-size: 14px;
             }
+.home-one{
+	text-align: center;
+	background-color:white;
+}
+.home-one-left{
+	height:0.1px; width: 40%; background-color: #000000; float: left;
+}
+.home-one-h5{
+	display: inline;width: 20%;
+}
+.home-one-right{
+	height:0.1px; width: 40%; background-color: #000000; float: right;
+}
+.sort-title{
+            	background: deepskyblue;
+            	color: black;
+            	padding: 15px 15px 15px 15px;
+            	font-size: 23px;
+            	font-style:oblique;
+            	height: 50px;
+            }
+ .oa-contact-avatar{
+ 	width: 110px;
+	height: 85px;
+ }
+.img-desinger{
+	width: 85px;
+	height: 85px;
+}
+.div-title{
+	margin-bottom: 6px;
+}
