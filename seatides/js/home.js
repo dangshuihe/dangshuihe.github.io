@@ -245,7 +245,7 @@ queryModel.find({
       	mui.openWindow(object.get("weidianUrl"));
       }
       a.querySelector("img").setAttribute("src",ad1["_url"]);
-      
+     
        home_one_child[0].parentNode.appendChild(modelClone);
        console.log(ad1);
 //     var io = home_one_child[0].nextSibling.childNodes;
@@ -416,7 +416,9 @@ function queryDemoFun(){
       var img = object.get("image");
       tag_img.setAttribute("src",img["_url"]);
       
-     
+      var url = object.get("weidianUrl");
+      var a_url= clone_li_pop.querySelector("a");
+      a_url.setAttribute("href",url);
 
       ul_demo_clothes.appendChild(clone_li_pop);
      
