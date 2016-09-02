@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+			
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" href="../css/home.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id = "title" class="mui-title">产品</h1>
+		</header>
+		<div id="homepager" style="background:white;min-height: 520px; margin-top: 40px;" class="mui-control-content mui-active">
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a id="adFirstUrlDf">
+								<img id="adFirstDf" src="../images/ad_01.png">
+								<!--<p class="mui-slider-title">微信公众号</p>-->
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a id="adFirstUrl">
+								<img id="adFirst" src="../images/ad_01.png">
+								<!--<p class="mui-slider-title">微信公众号</p>-->
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a id="adSecondUrl" >
+								<img id="adSecond" src="../images/ad_02.jpg">
+								<!--<p class="mui-slider-title">微信公众号</p>-->
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a id="adThirdUrl">
+								<img id="adThird" src="../images/ad_03.jpg">
+								<!--<p class="mui-slider-title">微信公众号</p>-->
+							</a>
+						</div>
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a id="adThirdUrlDf">
+								<img id="adThirdDf" src="../images/ad_03.jpg">
+								<!--<p class="mui-slider-title">微信公众号</p>-->
+							</a>
+						</div>
+					</div>
+					<div class="mui-slider-indicator mui-text-right">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+					</div>
+				</div>
+				
+				 <ul class="mui-table-view mui-grid-view mui-grid-9"
+				 	style="background: white;margin-top: 10px;">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
+		            	style="width: 33.3%;"><a id="a-weidian" >
+		                    <!--<span class="mui-icon"></span>-->
+		                    <img src="../images/ic_weidian_32.png" />
+		                    <div class="mui-media-body">微店</div></a></li>
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
+		            	style="width: 33.3%"><a id="a-taobao" >
+		                    <img src="../images/ic_taobao_32.png" />
+		                    <div class="mui-media-body">淘宝</div></a></li>
+		            <!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
+		            	style="width: 25%;"><a href="#">
+		                    <img src="../images/ic_designer_32.png" />
+		                    <div class="mui-media-body">设计师</div></a></li>-->
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"
+		            	style=""width: 33.3%"><a>
+		                    <img src="../images/ic_customer_32.png" />
+		                    <div class="mui-media-body">客服</div></a></li>
+		                   </ul>
+		                   
+				<div>
+					<div class="mui-card" style="margin: 0;">
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner">
+						<span id="span-objectid">编号</span> <span id="span-price" style="float: right;color: red;">nim</span>
+						<p id="p-content" style="margin-top:5px; font-size:16px; color: #333;">..</p>
+					</div>
+				</div>
+				<div class="mui-card-footer" style="height: 80px;">
+					<a class="mui-card-link"></a>
+					<a  style="text-align: center;margin-top: 10px;">
+						<img id="img-designer" 
+						style="height: 40px;"> 
+					
+						<p id="p-nick">设计xx师</p>
+					</a>
+				</div>
+			</div>
+</a>
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/utils.js" ></script>
+		<script type="text/javascript" src="../js/bmob-min.js" ></script>
+		<script src="../js/product.js"></script>
+		
+	</body>
+
+</html>

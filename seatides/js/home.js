@@ -102,10 +102,20 @@
 										self.endPullDownToRefresh();
 										switch(mark){
 											case 0:
-											console.log("zzzzzzzzzzzzzzzzzzzz");
+											queryClothesMark = 0;
+											 while(ul_pop_clothes.hasChildNodes()) //当div下还存在子节点时 循环继续
+                                              {
+                                               ul_pop_clothes.removeChild(ul_pop_clothes.firstChild);
+                                                 }
+											fun_query_clothes();										
 											break;
 											case 1:
-											console.log("zzzzccccccccczzzz");
+											queryDemoMark = 0;
+											 while(ul_demo_clothes.hasChildNodes()) //当div下还存在子节点时 循环继续
+                                              {
+                                               ul_demo_clothes.removeChild(ul_demo_clothes.firstChild);
+                                                 }
+											queryDemoFun();
 											break
 											case 2:
 											console.log("zzzzcqqqqqqqqcccccccczzzz");
@@ -121,7 +131,18 @@
 									setTimeout(function() {
 									/*	var ul = self.element.querySelector('.mui-table-view');
 										ul.appendChild(createFragment(ul, index, 5));*/
-										console.log("zccccccccccccccccc");
+										switch(mark){
+											case 0:
+											
+											fun_query_clothes();
+											break;
+											case 1:
+											queryDemoFun();
+											break
+											case 2:
+											console.log("2zzzzcqqqqqqqqcccccccczzzz");
+											break;
+										}
 										self.endPullUpToRefresh();
 									}, 1000);
 								}
@@ -303,6 +324,8 @@ function homeSort(object,order){
             /* //切换到指定的选项卡
                     mui.trigger(document.getElementById("defaultTab"), 'touchstart');
                     mui.trigger(document.getElementById("defaultTab"), 'tap');
+                    
+
 */
 /*
  * 这是分类页面数据获取
@@ -310,29 +333,23 @@ function homeSort(object,order){
 var ul_pop_clothes = document.getElementById("ul-pop-clothes");
 var li_pop_clothes = document.getElementsByClassName("li-pop-clothes");
 
+
 var cothes = Bmob.Object.extend("Clothes");
 var queryClothes = new Bmob.Query(cothes);
 queryClothes.limit(10);
 queryClothes.equalTo("type",1);
 var queryClothesMark = 0;
-// 查询所有数据
-queryClothes.find({
+function fun_query_clothes(){
+//	console.log("mjshkd"+queryClothesMark);
+	queryClothes.skip(queryClothesMark*10);
+	queryClothes.find({
   success: function(results) {
-//  console.log("共查询到 " + results.length + " 条记录clothes");
+//  console.log("共查询ccc到 " + results.length + " 条记录clothes");
     // 循环处理查询到的数据
+    if(results.length!=0){
     for (var i = 0; i < results.length; i++) {
       var object = results[i];
       var clone_li_pop = li_pop_clothes[0].cloneNode(true);
-      clone_li_pop.addEventListener('tap', function() {
-//				window.sessionStorage.setItem("test",2)
-//				console.log(window.sessionStorage.getItem("test"));
-  //打开关于页面
-  mui.openWindow({
-    url: '../seatides/page/popular.html?src='+"http://weidian.com/s/738018627?wfr=c", 
-    id:'info'
-  });
-  });
-     
       
       var tag_img = clone_li_pop.querySelector("a").querySelector("img");
       var tag_title = clone_li_pop.querySelector("a").getElementsByClassName("mui-media-body");
@@ -344,19 +361,36 @@ queryClothes.find({
       
       tag_price[0].innerText = "￥"+object.get("price");
       var img = object.get("image");
+      var id = object.id;
       tag_img.setAttribute("src",img["_url"]);
+      clone_li_pop.querySelector("a").setAttribute("href",'../seatides/page/product.html?objectId='+id);
+//     clone_li_pop.addEventListener('tap', function() {
+////				window.sessionStorage.setItem("test",2)
+////				console.log(window.sessionStorage.getItem("test"));
+////打开关于页面
+//mui.openWindow({
+//  /*url: '../seatides/page/popular.html?src='+"http://weidian.com/s/738018627?wfr=c", */
+//  url: '../seatides/page/product.html?objectId='+id,
+//  id:'info'
+//});
+//});
 
       ul_pop_clothes.appendChild(clone_li_pop);
      
     }
     if(queryClothesMark==0){
-    	queryClothesMark = 1;
+    	
     	ul_pop_clothes.removeChild(li_pop_clothes[0]);
     }
+   }
+    queryClothesMark=queryClothesMark+1;
   },
   error: function(error) { 
   }
 });
+
+}
+fun_query_clothes();//开始执行查询爆款
 
 
 var ul_demo_clothes = document.getElementById("ul-demo-clothes");
@@ -365,10 +399,11 @@ var queryDemo = new Bmob.Query(model);
 queryDemo.limit(10);
 var queryDemoMark = 0;
 function queryDemoFun(){
-	
+	queryDemo.skip(10*queryDemoMark);
 	queryDemo.find({
   success: function(results) {
     // 循环处理查询到的数据
+    if(results.length!=0){
     for (var i = 0; i < results.length; i++) {
       var object = results[i];
       var clone_li_pop = li_pop_clothes[0].cloneNode(true);
@@ -381,23 +416,17 @@ function queryDemoFun(){
       var img = object.get("image");
       tag_img.setAttribute("src",img["_url"]);
       
-      clone_li_pop.addEventListener('tap', function() {
-//				window.sessionStorage.setItem("test",2)
-//				console.log(window.sessionStorage.getItem("test"));
-  //打开关于页面
-  mui.openWindow({
-    url: '../seatides/page/popular.html?src='+"http://weidian.com/s/738018627?wfr=c", 
-    id:'info'
-  });
-  });
+     
 
       ul_demo_clothes.appendChild(clone_li_pop);
      
     }
     if(queryDemoMark==0){
-    	queryDemoMark = 1;
+    	
     	ul_demo_clothes.removeChild(ul_demo_clothes.firstChild);
     }
+    }
+    queryDemoMark++;
   },
   error: function(error) { 
   }
@@ -428,13 +457,17 @@ queryDesigner.find({
       tag_img.setAttribute("src",img["_url"]);
       var div2 = divlist[1].querySelector("div");
       var qq = divlist[1].querySelector("p");
-      qq.innerHTML = "QQ:"+object.get("qq");
+      var qqNum = object.get("qq");
+      qq.innerHTML = "QQ:"+qqNum 
       var tag_nick = div2.querySelector("h4");
       tag_nick.innerText = object.get("nick");
       var tag_profile = div2.querySelector("span");
       tag_profile.innerText = object.get("profile");
+      var a_qq = div1.querySelector("a");
+    clone_designer.addEventListener('tap', getHandler('../seatides/page/designer.html?objectId='+object.id+"&role=1"));
+     a_qq.setAttribute("href",'http://wpa.qq.com/msgrd?v=3&uin='+qqNum+'&site=qq&menu=yes');
       ul_designer.appendChild(clone_designer);
-     
+      
     }
     if(queryDesignerMark==0){
     	queryDesignerMark = 1;
@@ -444,3 +477,24 @@ queryDesigner.find({
   error: function(error) { 
   }
 });
+
+function customerList(){
+	 mui.openWindow({
+     url: '../seatides/page/customerlist.html',
+    id:'info'
+  });
+}
+
+function fans() {
+	 mui.openWindow({
+     url: 'http://wap.webei.cn/7c55656012',
+    id:'info'
+  });
+}
+
+function notice(){
+	mui.openWindow({
+     url: '../seatides/page/noticelist.html',
+    id:'info'
+  });
+}

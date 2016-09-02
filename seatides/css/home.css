@@ -71,14 +71,14 @@
 				margin-top: 50px;
 			}
 			.popular-item-img{
-				height:100px; 
-				max-width: 100px;
+				height:80px; 
+				max-width: 80px;
 				margin-right: 10px;
 			}
 
             .mui-ellipsis{
             	white-space:normal;
-            	font-size: 18px;
+            	font-size: 14px;
             	padding-top: 5px;
             }
             .mui-media-body{
@@ -120,4 +120,8 @@
 }
 .div-title{
 	margin-bottom: 6px;
+	font-size: 17px;
+}
+.ic-bt {
+	background-color: white;
 }

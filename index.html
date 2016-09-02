@@ -35,7 +35,7 @@
 			</a>-->
 		</nav>
 
-		<div class="mui-content">
+		<div class="mui-content" style="background: white;">
 			<div id="homepager" class="mui-control-content mui-active">
 				<div id="slider" class="mui-slider">
 					<div class="mui-slider-group mui-slider-loop">
@@ -64,7 +64,7 @@
 							</a>
 						</div>
 						<div class="mui-slider-item mui-slider-item-duplicate">
-							<a href="adThirdUrlDf">
+							<a id="adThirdUrlDf">
 								<img id="adThirdDf">
 								<!--<p class="mui-slider-title">微信公众号</p>-->
 							</a>
@@ -78,15 +78,15 @@
 				</div>
 				<div>
 
-					<table align="center" width="100%" height="60px" border=0 style="margin:10px auto;" bordercolor="#00ff99">
-						<tbody style="height: 100px;">
+					<table align="center" width="100%" border=0 style="margin:10px auto;" bordercolor="#00ff99">
+						<tbody style="height: 50px;">
 							<tr>
-								<td width="33.3%" onclick="mealClick()" style="text-align:center"><img class="icon" style="width: 50%;" src="../seatides/images/ic_service.png">
+								<td width="33.3%" onclick="customerList()" style="text-align:center"><img class="icon" style="width: 50%;" src="../seatides/images/ic_service.png">
 									<h4 style="color:#9D9D9D; text-align:center">客服</h5></td>
-					<td width="33.3%" onclick="dialyorderClick()" style="text-align:center"><img style="width: 50%;"
+					<td width="33.3%" onclick="fans()" style="text-align:center"><img style="width: 50%;"
 						class="icon" src="../seatides/images/ic_designer.png">
-						<h4 style="color:#9D9D9D; text-align:center">设计师</h5></td>
-					<td width="33.3%" onclick="staffInfoClick()" style="text-align:center"><img  style="width: 50%;" class="icon" 
+						<h4 style="color:#9D9D9D; text-align:center">微社区</h5></td>
+					<td width="33.3%" onclick="notice()" style="text-align:center"><img  style="width: 50%;" class="icon" 
 						src="../seatides/images/ic_notice.png">
 						<h4 style="color:#9D9D9D; text-align:center">公告</h5></td>
 				</tr>
@@ -100,7 +100,7 @@
 	<h5 class="home-one-h5">畅销冠军</h5>
 	<hr class="home-one-right"></hr>
              
-		       <ul class="popular-ul mui-table-view mui-grid-view mui-grid-9">
+		       <ul style="background: white;" class="popular-ul mui-table-view mui-grid-view mui-grid-9">
 
 	<li class="home-one-child mui-table-view-cell mui-media mui-col-xs-4  ">
 		<a href="#">
@@ -146,7 +146,7 @@
 						<img class="mui-pull-left popular-item-img" src="../seatides/images/test_00.jpg">
 						<div class="mui-media-body">
 							<div class="div-title"></div>
-							<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+							<p class='mui-ellipsis'>衣服模板，自由搭配.</p>
 							<p class="popular-item-price">￥22</p>
 						</div>
 					</a>
@@ -183,7 +183,7 @@
 						<img class="mui-pull-left popular-item-img" src="../seatides/images/test_00.jpg">
 						<div class="mui-media-body">
 							<div class="div-title"></div>
-							<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+							<p class='mui-ellipsis'>衣服模板，自由搭配</p>
 							<p class="popular-item-price">￥22</p>
 						</div>
 					</a>
@@ -199,7 +199,7 @@
 						<img class="mui-pull-left popular-item-img" src="../seatides/images/test_00.jpg">
 						<div class="mui-media-body">
 							<div class="div-title"></div>
-							<p class='mui-ellipsis'>烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+							<p class='mui-ellipsis'>衣服模板，自由搭配.</p>
 							<p class="popular-item-price">￥22</p>
 						</div>
 					</a>
@@ -222,7 +222,7 @@
 							<div class="oa-contact-avatar mui-table-cell">
 								<img class="img-desinger" />
 							</div>
-							<div class="oa-contact-content mui-table-cell">
+							<div class="oa-contact-content mui-table-cell" style="float: left;">
 								<div class="mui-clearfix">
 									<h4 class="oa-contact-name">叶文洁</h4>
 									<span class="oa-contact-position mui-h6">董事长</span>
@@ -231,13 +231,19 @@
 					yewenjie@sina.com
 				</p>
 			</div>
+			<a style="float: right;">
+			<img class="img-qq" style="width: 28px;height: 28px; " src="images/ic_qq_32.png" />
+			</a>
 		</div>
+		
 		</div>
+		
 		</li>
 		</ul>
 		</div>
-
+      <!--<a href="http://wpa.qq.com/msgrd?v=3&uin=876078600&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:876078600:51" alt="咨询卖家" title="咨询卖家"/></a>-->
 	</body>
+	<script type="text/javascript" src="../seatides/js/utils.js" ></script>
 	<script src="../seatides/js/bmob-min.js"></script>
 	<script src="../seatides/js/mui.min.js"></script>
 	<script src="../seatides/js/mui.pullToRefresh.js"></script>
