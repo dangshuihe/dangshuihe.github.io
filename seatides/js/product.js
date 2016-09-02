@@ -86,3 +86,10 @@ queryClothes.get(objectId, {
     // 查询失败
   }
 });
+
+function customerList(){
+	 mui.openWindow({
+     url: '../page/customerlist.html',
+    id:'info'
+  });
+}
