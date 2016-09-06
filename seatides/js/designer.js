@@ -1,6 +1,7 @@
 mui.init();
 Bmob.initialize("3a0692d0c1ddd3a9c03d0d6f2f89a1bf", "ab0a4a72bb6e44a3c89746a2da48a937");
 var objectId = UrlParm.parm("objectId");
+window.sessionStorage.setItem("itemMark",2);
 var role = UrlParm.parm("role");
 console.log(role);
 var user = Bmob.Object.extend("User");

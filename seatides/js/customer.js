@@ -1,5 +1,8 @@
 Bmob.initialize("3a0692d0c1ddd3a9c03d0d6f2f89a1bf", "ab0a4a72bb6e44a3c89746a2da48a937");
 mui.init();
+
+      	window.sessionStorage.setItem("itemMark",0);
+
 //客服人员
 var ul_designer = document.getElementById("ul-designer");
 var  li_designer= document.getElementsByClassName("li-designer");

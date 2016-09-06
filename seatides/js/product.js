@@ -7,7 +7,8 @@ var slider = mui("#slider");
  
  var objectId = UrlParm.parm("objectId"); 
  var Clothes = Bmob.Object.extend("Clothes");
- 
+ window.sessionStorage.setItem("itemMark",1);
+      
 //创建查询对象，入口参数是对象类的实例
 var queryClothes = new Bmob.Query(Clothes);
 //查询单条数据，第一个参数是这条数据的objectId值
@@ -65,18 +66,20 @@ queryClothes.get(objectId, {
     h1Title.innerText = title;
     spanObjectId.innerText = "编号:  "+objectId;
     spanPrice.innerText = "￥"+price;
-    console.log(taobaoUrl);
     aTaobao.addEventListener('tap', function() {
+    	window.sessionStorage.setItem("taobaoUrl",taobaoUrl);
   //打开关于页面
   mui.openWindow({
-    url: taobaoUrl, 
+    url: '../page/taobao.html?objectId='+objectId, 
+//  url:taobaoUrl,
     id:'info'
   });
   });
   aWeidian.addEventListener('tap', function() {
+  	window.sessionStorage.setItem("weidianUrl",weidianUrl);
   //打开关于页面
   mui.openWindow({
-    url: weidianUrl, 
+    url: '../page/weidian.html', 
     id:'info'
   });
   }); 

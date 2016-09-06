@@ -1,6 +1,23 @@
     mui.init();
     
    Bmob.initialize("3a0692d0c1ddd3a9c03d0d6f2f89a1bf", "ab0a4a72bb6e44a3c89746a2da48a937");
+   
+   var item_pop ;
+   var item_demo;
+   var item3;
+   var html_pop;
+   var html_demo;
+   var markSort = 0;
+   var sliderProgressBar;
+   if(window.sessionStorage.getItem("itemMark")==null){
+   	 window.sessionStorage.setItem("itemMark",0);
+   }
+   //控制页面滑动条变化
+   sliderProgressBar = document.getElementById("sliderProgressBar");
+   item_pop = document.getElementById('ul-pop-clothes');
+				item_demo = document.getElementById('ul-demo-clothes');
+				
+				item3 = document.getElementById('ul-serious-clothes');
 		var slider = mui("#slider");
 		slider.slider({
 					interval: 5000
@@ -13,80 +30,75 @@
 				});
 				
 				
-				var item1 = document.getElementById('ul-pop-clothes');
-				var item2 = document.getElementById('ul-demo-clothes');
 				
-				var item3 = document.getElementById('ul-serious-clothes');
-				var html1 = item1.innerHTML;
-				var html2;
-				var html3;
 				
-				//控制页面滑动条变化
-//			    var sliderProgressBar = document.getElementById("sliderProgressBar");
-                var mark = 0;
+				
+				html_pop = item_pop.innerHTML;
+			
+				markSort = 0;
+				
+				
+                
 				document.getElementById('slider-sort').addEventListener('slide', function(e) {
 					if (e.detail.slideNumber === 0) {
 			
-						if(mark==1){
-							html2 = item2.innerHTML;
-						item2.innerHTML="";
+						if(markSort==1){
+							html_demo = item_demo.innerHTML;
+							window.sessionStorage.setItem("demoHtml",html_demo);
+						item_demo.innerHTML="";
 						}else{
 							html3 = item3.innerHTML;
 						item3.innerHTML="";
 						}
-						console.log(item2);
-						item1.innerHTML = html1;
+					    window.sessionStorage.setItem("popHtml",html_pop);
+						item_pop.innerHTML = html_pop;
 						sliderProgressBar.style.marginLeft = "0";
-						mark = 0;
+						console.log("长度一",sliderProgressBar.style.marginLeft);
+						markSort = 0;
 					}else if (e.detail.slideNumber === 1) {
-//						item2.innerHTML = document.getElementById('item1mobile').innerHTML;	
-						if(mark==0){
-							html1 = item1.innerHTML;
-						item1.innerHTML="";
+						if(markSort==0){
+							html_pop = item_pop.innerHTML;
+							window.sessionStorage.setItem("popHtml",html_pop);
+						item_pop.innerHTML="";
 						}else{
 							html3 = item3.innerHTML;
-			            item3.innerHTML="";
-			           }
-						item2.innerHTML = html2;
-							if(queryDemoMark==0){
-								 queryDemoFun();
-							}
-						
-						if (item2.querySelector('.mui-loading')) {
-							setTimeout(function() {
-							
-							
-//								item2.querySelector('.mui-scroll').innerHTML = html2;
-								
-							}, 500);
+						item3.innerHTML="";
 						}
+						if(window.sessionStorage.getItem("demoHtml")==null){
+						queryDemoFun();
+						}else{
+					    window.sessionStorage.setItem("demoHtml",html_demo);
+						item_demo.innerHTML = html_demo;
+						}
+						markSort = 1;
 						sliderProgressBar.style.marginLeft = "33.3%";
-						mark = 1;
-						
+						console.log("长度二",sliderProgressBar.style.marginLeft);
 					} else if (e.detail.slideNumber === 2) {
 						
-						
-						if(mark==0){
-						html1 = item1.innerHTML;
-						item1.innerHTML="";
+						if(markSort==0){
+						html_pop = item_pop.innerHTML;
+						window.sessionStorage.setItem("popHtml",html_pop);
+						item_pop.innerHTML="";
 						}else{
-						html2 = item2.innerHTML;
-						item2.innerHTML="";
+						html_demo = item_demo.innerHTML;
+						window.sessionStorage.setItem("demoHtml",html_demo);
+						item_demo.innerHTML="";
 						}
-						/*item1.remove();
-						item2.remove();*/
 						if (item3.querySelector('.mui-loading')) {
 							setTimeout(function() {
-								console.log(html3)
 								item3.innerHTML = html3;
 //								item3.querySelector('.mui-scroll').innerHTML = html3;
 								
 							}, 500);
 							
 						}
-						mark = 2;
+						markSort = 2;
+						
 						sliderProgressBar.style.marginLeft = "66.6%";
+						console.log("长度三",sliderProgressBar.style.marginLeft);
 					}
+					window.sessionStorage.setItem("markSort",markSort);
+					console.log(window.sessionStorage.getItem("markSort"));
 				});
 				
 				$.ready(function() {
@@ -100,26 +112,25 @@
 										/*var ul = self.element.querySelector('.mui-table-view');
 										ul.insertBefore(createFragment(ul, index, 10, true), ul.firstChild);*/
 										self.endPullDownToRefresh();
-										switch(mark){
-											case 0:
+										console.log("nimena");
+										if(markSort==0){
+											window.sessionStorage.setItem("queryClothesMark",0);
 											queryClothesMark = 0;
 											 while(ul_pop_clothes.hasChildNodes()) //当div下还存在子节点时 循环继续
                                               {
                                                ul_pop_clothes.removeChild(ul_pop_clothes.firstChild);
                                                  }
 											fun_query_clothes();										
-											break;
-											case 1:
+											}else if(markSort==1){
 											queryDemoMark = 0;
+											window.sessionStorage.setItem("queryDemoMark",0);
 											 while(ul_demo_clothes.hasChildNodes()) //当div下还存在子节点时 循环继续
                                               {
                                                ul_demo_clothes.removeChild(ul_demo_clothes.firstChild);
                                                  }
 											queryDemoFun();
-											break
-											case 2:
-											console.log("zzzzcqqqqqqqqcccccccczzzz");
-											break;
+											}else if(markSort==2){
+											
 										}
 									
 									}, 1000);
@@ -131,18 +142,15 @@
 									setTimeout(function() {
 									/*	var ul = self.element.querySelector('.mui-table-view');
 										ul.appendChild(createFragment(ul, index, 5));*/
-										switch(mark){
-											case 0:
-											
+										if(markSort==0){
 											fun_query_clothes();
-											break;
-											case 1:
+											}
+											else if(markSort==1){
 											queryDemoFun();
-											break
-											case 2:
-											console.log("2zzzzcqqqqqqqqcccccccczzzz");
-											break;
-										}
+											}else if(markSort==2){
+											}
+											
+				
 										self.endPullUpToRefresh();
 									}, 1000);
 								}
@@ -321,7 +329,9 @@ function homeSort(object,order){
       
         popular_ul[order].appendChild(modelClone);
 }
-            /* //切换到指定的选项卡
+         
+         
+         /* //切换到指定的选项卡
                     mui.trigger(document.getElementById("defaultTab"), 'touchstart');
                     mui.trigger(document.getElementById("defaultTab"), 'tap');
                     
@@ -340,6 +350,10 @@ queryClothes.limit(10);
 queryClothes.equalTo("type",1);
 var queryClothesMark = 0;
 function fun_query_clothes(){
+	if(window.sessionStorage.getItem("queryClothesMark")!=null){
+		queryClothesMark = parseInt(window.sessionStorage.getItem("queryClothesMark"));
+	}
+	console.log(queryClothesMark +"pop");
 //	console.log("mjshkd"+queryClothesMark);
 	queryClothes.skip(queryClothesMark*10);
 	queryClothes.find({
@@ -383,30 +397,45 @@ function fun_query_clothes(){
     	ul_pop_clothes.removeChild(li_pop_clothes[0]);
     }
    }
+//  if(window.sessionStorage.getItem("popHtml")==null){
+//  	html_pop = item_pop.innerHTML;
+//  	window.sessionStorage.setItem("popHtml",html_pop);
+    	window.sessionStorage.setItem("markSort",markSort);
+//  }
     queryClothesMark=queryClothesMark+1;
+    window.sessionStorage.setItem("queryClothesMark",queryClothesMark);
+    html_pop = item_pop.innerHTML;
+	window.sessionStorage.setItem("popHtml",html_pop);
   },
   error: function(error) { 
   }
 });
 
 }
-fun_query_clothes();//开始执行查询爆款
+
+
 
 
 var ul_demo_clothes = document.getElementById("ul-demo-clothes");
+var li_demo_clothes = document.getElementsByClassName("li-demo-clothes");
 var model = Bmob.Object.extend("Model");
 var queryDemo = new Bmob.Query(model);
 queryDemo.limit(10);
 var queryDemoMark = 0;
 function queryDemoFun(){
+	if(window.sessionStorage.getItem("queryDemoMark")!=null){
+		queryDemoMark = parseInt(window.sessionStorage.getItem("queryDemoMark"));
+	}
+	
 	queryDemo.skip(10*queryDemoMark);
 	queryDemo.find({
   success: function(results) {
+    console.log("查到数据"+results.length);
     // 循环处理查询到的数据
     if(results.length!=0){
     for (var i = 0; i < results.length; i++) {
       var object = results[i];
-      var clone_li_pop = li_pop_clothes[0].cloneNode(true);
+      var clone_li_pop = li_demo_clothes[0].cloneNode(true);
       var tag_img = clone_li_pop.querySelector("a").querySelector("img");
       var tag_title = clone_li_pop.querySelector("a").getElementsByClassName("mui-media-body");
       var tag_price = tag_title[0].getElementsByClassName("popular-item-price");
@@ -425,15 +454,24 @@ function queryDemoFun(){
     }
     if(queryDemoMark==0){
     	
-    	ul_demo_clothes.removeChild(ul_demo_clothes.firstChild);
+    	ul_demo_clothes.removeChild(li_demo_clothes[0]);
     }
     }
+   /* if(window.sessionStorage.getItem("demoHtml")==null){
+    	html_demo = item_demo.innerHTML;
+		window.sessionStorage.setItem("demoHtml",html_demo);
+		}*/
     queryDemoMark++;
+    window.sessionStorage.setItem("queryDemoMark",queryDemoMark);
+    html_demo = item_demo.innerHTML;
+	window.sessionStorage.setItem("demoHtml",html_demo);
   },
   error: function(error) { 
   }
 });
 }
+
+getCrash();
 
 /**
  * 这个是设计师页面板块
@@ -499,4 +537,46 @@ function notice(){
      url: '../seatides/page/noticelist.html',
     id:'info'
   });
+}
+function getCrash(){
+	if(window.sessionStorage.getItem("popHtml")==null){
+		fun_query_clothes();//开始执行查询爆款
+	}
+	console.log(window.sessionStorage.getItem("popHtml"));
+	if(window.sessionStorage.getItem("itemMark")==0){
+		mui.trigger(document.getElementById("item-home"), 'touchstart');
+        mui.trigger(document.getElementById("item-home"),'tap');
+	}else if(window.sessionStorage.getItem("itemMark")==1){
+		
+		mui.trigger(document.getElementById("item-sort"), 'touchstart');
+        mui.trigger(document.getElementById("item-sort"),'tap');
+	
+	}else if(window.sessionStorage.getItem("itemMark")==2){
+	
+		mui.trigger(document.getElementById("item-designer"), 'touchstart');
+        mui.trigger(document.getElementById("item-designer"),'tap');
+	}
+	
+	if(window.sessionStorage.getItem("popHtml")!=null){
+		html_pop = window.sessionStorage.getItem("popHtml");
+		html_demo = window.sessionStorage.getItem("demoHtml");
+		markSort = window.sessionStorage.getItem("markSort");
+		console.log(markSort+"nim");
+		
+		if(markSort==0){
+        mui.trigger(document.getElementById("a-pop"), 'touchstart');
+        mui.trigger(document.getElementById("a-pop"),'tap');
+        item_pop.innerHTML = html_pop;
+        
+       sliderProgressBar.style.marginLeft = "0px";
+      }else if(markSort==1){
+       	 
+        mui.trigger(document.getElementById("a-demo"), 'touchstart');
+        mui.trigger(document.getElementById("a-demo"),'tap');
+        item_demo.innerHTML = html_demo;
+        sliderProgressBar.style.marginLeft = "33%";
+        console.log(item_demo);
+       }
+     }
+//	console.log(item_home.getAttribute("class"));
 }
