@@ -50,7 +50,7 @@ function getClothes(designer){
 	queryClothes.find({
   success: function(results) {
     console.log("共查询到 " + results.length + " 条记录");
-    if(length==0){
+    if(results.length==0){
     	document.getElementById("div-designer").style.display="none";
     	ul_pop_clothes.style.display="none";
     }
@@ -73,17 +73,20 @@ function getClothes(designer){
       var img = object.get("image");
       var id = object.id;
       tag_img.setAttribute("src",img["_url"]);
+      var a_url= clone_li_pop.querySelector("a");
+      a_url.setAttribute("href",'../page/product.html?objectId='+id);
       
-       clone_li_pop.addEventListener('tap', function() {
+//     clone_li_pop.addEventListener('tap', function() {
+       	
 //				window.sessionStorage.setItem("test",2)
 //				console.log(window.sessionStorage.getItem("test"));
   //打开关于页面
-  mui.openWindow({
-    /*url: '../seatides/page/popular.html?src='+"http://weidian.com/s/738018627?wfr=c", */
-    url: '../page/product.html?objectId='+id,
-    id:'info'
-  });
-  });
+//mui.openWindow({
+//  /*url: '../seatides/page/popular.html?src='+"http://weidian.com/s/738018627?wfr=c", */
+//  url: '../page/product.html?objectId='+id,
+//  id:'info'
+//});
+//});
 
       ul_pop_clothes.appendChild(clone_li_pop);
      

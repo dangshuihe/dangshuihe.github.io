@@ -79,7 +79,7 @@ queryClothes.get(objectId, {
   	window.sessionStorage.setItem("weidianUrl",weidianUrl);
   //打开关于页面
   mui.openWindow({
-    url: '../page/weidian.html', 
+    url: '../page/weidian.html?type=1', 
     id:'info'
   });
   }); 

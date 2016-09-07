@@ -250,12 +250,17 @@ queryModel.find({
       var a = modelClone.querySelector("a");
 //    a.addEventListener()
       a.onclick = function(){
-      	mui.openWindow(object.get("weidianUrl"));
+      	window.sessionStorage.setItem("itemMark",0);
+      	var b = new Base64();
+      	var weidianUrl = b.encode(object.get("weidianUrl"));
+      	var url = '../seatides/page/weidian.html?type=0&weidianUrl='+weidianUrl;
+      	mui.openWindow(url);
       }
       a.querySelector("img").setAttribute("src",ad1["_url"]);
-     
+      var a = modelClone.querySelector("a");
+      a.querySelector("div").innerHTML=object.get("title");
        home_one_child[0].parentNode.appendChild(modelClone);
-       console.log(ad1);
+       
 //     var io = home_one_child[0].nextSibling.childNodes;
       /*if(model.querySelector("a")!=null){
       	console.log(model.querySelector("a"));
@@ -309,6 +314,7 @@ function homeSort(object,order){
 	var modelClone= home_one_child[order].cloneNode(true);
       var ad1 = eval(object.get("image"));
       var a = modelClone.querySelector("a");
+      a.querySelector("div").innerHTML=object.get("title");
       switch(object.get("sort")){
       	case 0:
       	home_one_h5[order].innerHTML = "豆蔻年华";
@@ -323,6 +329,10 @@ function homeSort(object,order){
       
 //    a.addEventListener()
       a.onclick = function(){
+      	window.sessionStorage.setItem("itemMark",0);
+      	/*var b = new Base64();
+      	var weidianUrl = b.encode(object.get("weidianUrl"));
+      	var url = '../seatides/page/weidian.html?type=0&weidianUrl='+weidianUrl;*/
       	mui.openWindow(object.get("weidianUrl"));
       }
       a.querySelector("img").setAttribute("src",ad1["_url"]);
@@ -447,7 +457,10 @@ function queryDemoFun(){
       
       var url = object.get("weidianUrl");
       var a_url= clone_li_pop.querySelector("a");
-      a_url.setAttribute("href",url);
+      var b = new Base64();  
+      var str = b.encode(url); 
+      a_url.setAttribute("href","../seatides/page/weidian.html?type=2&weidianUrl="+str);
+//    a_url.addEventListener('tap', handleWeidian('../seatides/page/weidian.html?type=2',url));
 
       ul_demo_clothes.appendChild(clone_li_pop);
      
@@ -519,6 +532,7 @@ queryDesigner.find({
 });
 
 function customerList(){
+	window.sessionStorage.setItem("itemMark",0);
 	 mui.openWindow({
      url: '../seatides/page/customerlist.html',
     id:'info'
@@ -526,6 +540,7 @@ function customerList(){
 }
 
 function fans() {
+	window.sessionStorage.setItem("itemMark",0);
 	 mui.openWindow({
      url: 'http://wap.webei.cn/7c55656012',
     id:'info'
@@ -533,6 +548,7 @@ function fans() {
 }
 
 function notice(){
+	window.sessionStorage.setItem("itemMark",0);
 	mui.openWindow({
      url: '../seatides/page/noticelist.html',
     id:'info'
