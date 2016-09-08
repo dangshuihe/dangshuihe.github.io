@@ -53,7 +53,7 @@
 					    window.sessionStorage.setItem("popHtml",html_pop);
 						item_pop.innerHTML = html_pop;
 						sliderProgressBar.style.marginLeft = "0";
-						console.log("长度一",sliderProgressBar.style.marginLeft);
+//						console.log("长度一",sliderProgressBar.style.marginLeft);
 						markSort = 0;
 					}else if (e.detail.slideNumber === 1) {
 						if(markSort==0){
@@ -72,7 +72,7 @@
 						}
 						markSort = 1;
 						sliderProgressBar.style.marginLeft = "33.3%";
-						console.log("长度二",sliderProgressBar.style.marginLeft);
+//						console.log("长度二",sliderProgressBar.style.marginLeft);
 					} else if (e.detail.slideNumber === 2) {
 						
 						if(markSort==0){
@@ -207,11 +207,30 @@ queryAd.find({
        var ad3 = eval(object.get("adThird"));
        adThird.setAttribute("src",ad3["_url"]);
        adThirdDf.setAttribute("src",ad3["_url"]);
-       
-       adFirstUrl.setAttribute("href",object.get("adFirstUrl"));
+       var b = new Base64();
+       adFirstUrl.onclick = function(){
+      	window.sessionStorage.setItem("itemMark",0);
+      	
+      	var weidianUrl = b.encode(object.get("adFirstUrl"));
+      	var url = '../seatides/page/weidian.html?type=0&weidianUrl='+weidianUrl;
+      	mui.openWindow(url);
+      }
+       adSecondUrl.onclick = function(){
+      	window.sessionStorage.setItem("itemMark",0);
+      	var weidianUrl = b.encode(object.get("adSecondUrl"));
+      	var url = '../seatides/page/weidian.html?type=0&weidianUrl='+weidianUrl;
+      	mui.openWindow(url);
+      }
+       adThirdUrl.onclick = function(){
+      	window.sessionStorage.setItem("itemMark",0);
+      	var weidianUrl = b.encode(object.get("adThirdUrl"));
+      	var url = '../seatides/page/weidian.html?type=0&weidianUrl='+weidianUrl;
+      	mui.openWindow(url);
+      }
+       /*adFirstUrl.setAttribute("href",object.get("adFirstUrl"));
        adSecondUrl.setAttribute("href",object.get("adSecondUrl"));
        adThirdUrl.setAttribute("href",object.get("adThirdUrl"));
-      
+      */
     }
   },
   error: function(error) {
@@ -237,7 +256,7 @@ var model = Bmob.Object.extend("Model");
 var queryModel = new Bmob.Query(model);
 queryModel.exists("popular");
 queryModel.ascending("popular");
-
+queryModel.greaterThan("popular", 0);
 // 查询所有数据
 queryModel.find({
   success: function(results) {
@@ -282,7 +301,7 @@ for (var j = 0; j < 3; j++){
 var result = Bmob.Object.extend("Result");
 var queryResult = new Bmob.Query(result);
 queryResult.equalTo("sort", j);
-queryResult.exists("popular");
+queryResult.greaterThan("popular", 0);
 queryResult.ascending("popular");
 
 // 查询所有数据
@@ -373,7 +392,7 @@ function fun_query_clothes(){
     if(results.length!=0){
     for (var i = 0; i < results.length; i++) {
       var object = results[i];
-      var clone_li_pop = li_pop_clothes[0].cloneNode(true);
+      var clone_li_pop = li_demo_clothes[0].cloneNode(true);
       
       var tag_img = clone_li_pop.querySelector("a").querySelector("img");
       var tag_title = clone_li_pop.querySelector("a").getElementsByClassName("mui-media-body");
@@ -445,7 +464,7 @@ function queryDemoFun(){
     if(results.length!=0){
     for (var i = 0; i < results.length; i++) {
       var object = results[i];
-      var clone_li_pop = li_demo_clothes[0].cloneNode(true);
+      var clone_li_pop = li_pop_clothes[0].cloneNode(true);
       var tag_img = clone_li_pop.querySelector("a").querySelector("img");
       var tag_title = clone_li_pop.querySelector("a").getElementsByClassName("mui-media-body");
       var tag_price = tag_title[0].getElementsByClassName("popular-item-price");
