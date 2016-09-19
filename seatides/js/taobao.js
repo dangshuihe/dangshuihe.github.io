@@ -14,8 +14,7 @@ var objectId = UrlParm.parm("objectId");
 		}
 if(is_weixin()){
 	document.getElementById("header").style.display="none"
-	document.getElementById("content").style.background="url(../images/taobao_tips.png)";
-	
+	document.getElementById("content").style.background="url(../images/taobao_tips.jpg)";
 }else{
 	var taobaoUrl
 	//创建查询对象，入口参数是对象类的实例
